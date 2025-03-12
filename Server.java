@@ -1,5 +1,6 @@
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
@@ -31,7 +32,7 @@ class Server {
             sendMsg = new PrintWriter(socket.getOutputStream());
            
 
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -51,7 +52,7 @@ class Server {
                     System.out.println("Client:" + msg);
                 }
 
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
         };
@@ -75,7 +76,7 @@ class Server {
 
                     }
                 }
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
 

@@ -1,5 +1,6 @@
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
@@ -22,7 +23,7 @@ class Client{
                                                                              is InputStream ,and it read raw bytes from the input stream*/
             sendMsg = new PrintWriter(socket.getOutputStream());
            
-        } catch (Exception e) {
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -44,7 +45,7 @@ class Client{
                    }
                }
 
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
 
@@ -65,7 +66,7 @@ class Client{
                     System.out.println("Server:"+msg);
                 }
 
-            } catch (Exception e) {
+            } catch (IOException e) {
                 System.out.println(e.getMessage());
             }
         };
